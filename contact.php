@@ -31,11 +31,6 @@
    <link rel="stylesoeet" href="css/owl.theme.default.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
-
-
-   <link rel="manifest" href="manifest.json">
-   <meta name="theme-color" content="#ff69b4">
-
 </head>
 
 <body>
@@ -184,90 +179,80 @@
                   <button type="submit" class="btn btn-success btn-orange d-flex justify-content-center mt-3"
                      style="width: 180px; margin: 0 auto;">Registrarse</button>
 
-                  <!--
-                  <div id="g_id_onload"
-                     data-client_id="643017907052-9bth423qj8852ptjhjmuespn73fb13p9.apps.googleusercontent.com"
-                     data-callback="handleCredentialResponse">
-                     <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue"
-                        data-text="signin_with" data-size="large" data-logo_alignment="left">
-                     </div> -->
-
-            </div>
-
-
-            <!-- Mensaje de éxito -->
-            <div id="successMessage" class="alert alert-success mt-3 text-center" style="display: none;">
-               Registro completado con éxito. ¡Bienvenido!
-            </div>
-            </form>
-         </div>
-         <!-- FIN DE LOS FORMULARIOS -->
-
-
-         <!-- Footer -->
-         <div class="footer_section layout_padding">
-            <div class="container">
-               <div class="newsletter_section">
-                  <div class="newsletter_left">
-                     <div class="footer_logo"><img src="images/log.jpeg" alt="footer logo" /></div>
+                  <!-- Mensaje de éxito -->
+                  <div id="successMessage" class="alert alert-success mt-3 text-center" style="display: none;">
+                     Registro completado con éxito. ¡Bienvenido!
                   </div>
-                  <div class="newsletter_right">
-                     <div class="subscribe_main">
-                        <input type="text" class="mail_text"
-                           placeholder="© 2025 ProyectiNovtion. Todos los derechos reservados." name="text" />
+               </form>
+            </div>
+            <!-- FIN DE LOS FORMULARIOS -->
+
+
+            <!-- Footer -->
+            <div class="footer_section layout_padding">
+               <div class="container">
+                  <div class="newsletter_section">
+                     <div class="newsletter_left">
+                        <div class="footer_logo"><img src="images/log.jpeg" alt="footer logo" /></div>
+                     </div>
+                     <div class="newsletter_right">
+                        <div class="subscribe_main">
+                           <input type="text" class="mail_text"
+                              placeholder="© 2025 ProyectiNovtion. Todos los derechos reservados." name="text" />
+                        </div>
                      </div>
                   </div>
-               </div>
 
 
-               <h1 class="follow_text">Follow Us</h1>
-               <div class="social_icon">
-                  <ul>
-                     <li><a href="#"><img src="images/fb-icon.png" alt="fb icon" /></a></li>
-                     <li><a href="#"><img src="images/twitter-icon.png" alt="twitter icon" /></a></li>
-                     <li><a href="#"><img src="images/linkedin-icon.png" alt="linkedin icon" /></a></li>
-                     <li><a href="#"><img src="images/instagram-icon.png" alt="instagram icon" /></a></li>
-                  </ul>
+                  <h1 class="follow_text">Follow Us</h1>
+                  <div class="social_icon">
+                     <ul>
+                        <li><a href="#"><img src="images/fb-icon.png" alt="fb icon" /></a></li>
+                        <li><a href="#"><img src="images/twitter-icon.png" alt="twitter icon" /></a></li>
+                        <li><a href="#"><img src="images/linkedin-icon.png" alt="linkedin icon" /></a></li>
+                        <li><a href="#"><img src="images/instagram-icon.png" alt="instagram icon" /></a></li>
+                     </ul>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
-      <!-- footer section end -->
+         <!-- footer section end -->
 
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-            <p class="copyright_text">Copyright 2019 All Right Reserved By.<a href="https://html.design"> Free
-                  html
-                  Templates</a> Distributed by. <a href="https://themewagon.com">ThemeWagon</a> </p>
-            </p>
+
+         <!-- copyright section start -->
+         <div class="copyright_section">
+            <div class="container">
+               <p class="copyright_text">Copyright 2019 All Right Reserved By.<a href="https://html.design"> Free
+                     html
+                     Templates</a> Distributed by. <a href="https://themewagon.com">ThemeWagon</a> </p>
+               </p>
+            </div>
          </div>
-      </div>
-      <!-- copyright section end -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-      <!-- javascript -->
-      <script src="js/owl.carousel.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-      <script>
-         $(document).ready(function () {
-            $(".fancybox").fancybox({
-               openEffect: "none",
-               closeEffect: "none"
+         <!-- copyright section end -->
+         <!-- Javascript files-->
+         <script src="js/jquery.min.js"></script>
+         <script src="js/popper.min.js"></script>
+         <script src="js/bootstrap.bundle.min.js"></script>
+         <script src="js/jquery-3.0.0.min.js"></script>
+         <script src="js/plugin.js"></script>
+         <!-- sidebar -->
+         <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+         <script src="js/custom.js"></script>
+         <!-- javascript -->
+         <script src="js/owl.carousel.js"></script>
+         <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+         <script>
+            $(document).ready(function () {
+               $(".fancybox").fancybox({
+                  openEffect: "none",
+                  closeEffect: "none"
+               });
             });
-         });
 
-      </script>
+         </script>
 
-      <!-- FIN DE LOS FORMULARIOS -->
-   </div> <!-- FIN container -->
+         <!-- FIN DE LOS FORMULARIOS -->
+      </div> <!-- FIN container -->
    </div> <!-- FIN contact_section -->
 
    <script>
@@ -284,39 +269,6 @@
          }
       });
    </script>
-   <script src="https://accounts.google.com/gsi/client" async defer></script>
-   <script src="js/google_login.js"></script>
-
-
-   <script>
-      function handleCredentialResponse(response) {
-         // El token de ID que puedes enviar a tu backend
-         const token = response.credential;
-
-         // Si quieres ver qué trae el token (debug)
-         console.log("ID Token:", token);
-
-         // Puedes enviarlo a tu backend con fetch() si deseas autenticar en el servidor
-         // o simplemente guardarlo en localStorage y redirigir
-         localStorage.setItem("usuarioGoogle", token);
-         alert("Sesión iniciada con Google correctamente");
-         window.location.href = "index.html"; // Redirige a tu página principal
-      }
-   </script>
-
-   <script>
-      if ('serviceWorker' in navigator) {
-         navigator.serviceWorker.register('service-worker.js')
-            .then(function (registration) {
-               console.log('Service Worker registrado con éxito:', registration);
-            })
-            .catch(function (error) {
-               console.log('Fallo al registrar el Service Worker:', error);
-            });
-      }
-   </script>
-
-
 </body>
 
 </html>

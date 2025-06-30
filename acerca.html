@@ -31,10 +31,6 @@
    <link rel="stylesoeet" href="css/owl.theme.default.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
-
-   <link rel="manifest" href="manifest.json">
-   <meta name="theme-color" content="#ff69b4">
-
 </head>
 
 <body>
@@ -63,62 +59,59 @@
    <div class="about_section layout_padding">
       <div id="my_main_slider" class="carousel slide" data-ride="carousel">
          <div class="carousel-inner">
-            <!-- about section start -->
-            <div class="about_section layout_padding">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-6">
-                        <div class="about_main">
-                           <h1 class="about_taital">ConTigo</h1>
-                           <p class="about_text">
-                              <strong>ConTigo</strong> es una aplicación móvil diseñada para brindar apoyo a mujeres en
-                              situaciones de riesgo como:
-                           </p>
-                           <ul class="about_text" style="padding-left: 20px; list-style-type: disc;">
-                              <li>Acoso</li>
-                              <li>Intento de robo</li>
-                              <li>Secuestro</li>
-                           </ul>
-                           <p class="about_text">
-                              Ofrece herramientas clave como:
-                           </p>
-                           <ul class="about_text" style="padding-left: 20px; list-style-type: disc;">
-                              <li>Botón de pánico</li>
-                              <li>Localización de puntos de ayuda</li>
-                              <li>Registro de contactos de emergencia</li>
-                              <li>Chatbot informativo</li>
-                           </ul>
-                           <p class="about_text">
-                              Su objetivo es actuar de forma <strong>rápida y confiable</strong>, brindando
-                              acompañamiento en los momentos más críticos.
-                           </p>
-                           <p class="about_text">
-                              Con <strong>ConTigo</strong>, <em>nunca estás sola</em>.
-                           </p>
-                           <p class="about_text" style="font-style: italic; color: #f3801f;">"Tu seguridad, en la palma
-                              de tu mano."</p>
-                        </div>
-                     </div>
-                     <div class="col-md-6 ">
-                        <div class="image_2"><img src="images/logo_inf.jpeg"></div>
-                     </div>
-                  </div>
-               </div>
+           <!-- about section start -->
+<div class="about_section layout_padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="about_main">
+               <h1 class="about_taital">ConTigo</h1>
+               <p class="about_text">
+                  <strong>ConTigo</strong> es una aplicación móvil diseñada para brindar apoyo a mujeres en situaciones de riesgo como:
+               </p>
+               <ul class="about_text" style="padding-left: 20px; list-style-type: disc;">
+                  <li>Acoso</li>
+                  <li>Intento de robo</li>
+                  <li>Secuestro</li>
+               </ul>
+               <p class="about_text">
+                  Ofrece herramientas clave como:
+               </p>
+               <ul class="about_text" style="padding-left: 20px; list-style-type: disc;">
+                  <li>Botón de pánico</li>
+                  <li>Localización de puntos de ayuda</li>
+                  <li>Registro de contactos de emergencia</li>
+                  <li>Chatbot informativo</li>
+               </ul>
+               <p class="about_text">
+                  Su objetivo es actuar de forma <strong>rápida y confiable</strong>, brindando acompañamiento en los momentos más críticos.
+               </p>
+               <p class="about_text">
+                  Con <strong>ConTigo</strong>, <em>nunca estás sola</em>.
+               </p>
+                <p class="about_text" style="font-style: italic; color: #f3801f;">"Tu seguridad, en la palma de tu mano."</p>
             </div>
          </div>
-         <!-- about section end -->
-
+         <div class="col-md-6 ">
+            <div class="image_2"><img src="images/logo_inf.jpeg"></div>
+         </div>
+      </div>
       </div>
    </div>
+</div>
+<!-- about section end -->
 
-   </div>
-   <a class="carousel-control-prev" href="#my_main_slider" role="button" data-slide="next">
-      <i class="fa fa-angle-left"></i>
-   </a>
-   <a class="carousel-control-next" href="#my_main_slider" role="button" data-slide="next">
-      <i class="fa fa-angle-right"></i>
-   </a>
-   </div>
+               </div>
+            </div>
+           
+         </div>
+         <a class="carousel-control-prev" href="#my_main_slider" role="button" data-slide="next">
+            <i class="fa fa-angle-left"></i>
+         </a>
+         <a class="carousel-control-next" href="#my_main_slider" role="button" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+         </a>
+      </div>
    </div>
    <!-- about section end -->
    <!-- footer section start -->
@@ -167,38 +160,24 @@
             openEffect: "none",
             closeEffect: "none"
          });
-      });
+         });
 
    </script>
    <script>
-      $(document).ready(function () {
-         // Add minus icon for collapse element which is open by default
-         $(".collapse.show").each(function () {
-            $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
-         });
-
-         // Toggle plus minus icon on show hide of collapse element
-         $(".collapse").on('show.bs.collapse', function () {
-            $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
-         }).on('hide.bs.collapse', function () {
-            $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
-         });
-      });
-   </script>
-
-   <script>
-      if ('serviceWorker' in navigator) {
-         navigator.serviceWorker.register('service-worker.js')
-            .then(function (registration) {
-               console.log('Service Worker registrado con éxito:', registration);
-            })
-            .catch(function (error) {
-               console.log('Fallo al registrar el Service Worker:', error);
+         $(document).ready(function () {
+            // Add minus icon for collapse element which is open by default
+            $(".collapse.show").each(function () {
+               $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
             });
-      }
+
+            // Toggle plus minus icon on show hide of collapse element
+            $(".collapse").on('show.bs.collapse', function () {
+               $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+            }).on('hide.bs.collapse', function () {
+               $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+            });
+         });
    </script>
-
-
 </body>
 
 </html>

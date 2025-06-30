@@ -25,10 +25,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
 
   <link rel="icon" href="images/fevicon.png" type="image/gif" />
-
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#ff69b4">
-
   <style>
     body {
       padding-top: 100px;
@@ -115,19 +111,6 @@
   </div>
 
   <script src="script.js"></script>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(function (registration) {
-          console.log('Service Worker registrado con éxito:', registration);
-        })
-        .catch(function (error) {
-          console.log('Fallo al registrar el Service Worker:', error);
-        });
-    }
-  </script>
-
 </body>
 
 </html>
