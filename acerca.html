@@ -31,106 +31,113 @@
    <link rel="stylesoeet" href="css/owl.theme.default.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
       media="screen">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
 </head>
 
 <body>
+   <canvas id="orangeCanvas"></canvas>
    <!-- header section start -->
    <div class="header_section">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-         <div class="logo"><a href="index.html"><img src="images/log.jpeg"></a></div>
+         <div class="logo custom-logo">
+            <a href="index.html"><img src="images/log.png" alt="Logo"></a>
+         </div>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"><span>
          </button>
          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-               <a class="nav-item nav-link" href="index.html">Inicio</a>
-               <a class="nav-item nav-link" href="acerca.html">Acerca de</a>
-               <a class="nav-item nav-link" href="informacion.html">Información</a>
+               <a class="nav-item nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+               <a class="nav-item nav-link" href="acerca.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+               <a class="nav-item nav-link" href="informacion.html"><i class="fas fa-book"></i> Información</a>
+               <a class="nav-item nav-link" href="contact.php"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
             </div>
-         </div>
-         <div class="login_menu">
-            <a href="#"><img src="images/search-icon.png"></a>
          </div>
       </nav>
    </div>
    <!-- header section end -->
+
    <!-- about section start -->
    <div class="about_section layout_padding">
       <div id="my_main_slider" class="carousel slide" data-ride="carousel">
          <div class="carousel-inner">
-           <!-- about section start -->
-<div class="about_section layout_padding">
-   <div class="container">
-      <div class="row">
-         <div class="col-md-6">
-            <div class="about_main">
-               <h1 class="about_taital">ConTigo</h1>
-               <p class="about_text">
-                  <strong>ConTigo</strong> es una aplicación móvil diseñada para brindar apoyo a mujeres en situaciones de riesgo como:
-               </p>
-               <ul class="about_text" style="padding-left: 20px; list-style-type: disc;">
-                  <li>Acoso</li>
-                  <li>Intento de robo</li>
-                  <li>Secuestro</li>
-               </ul>
-               <p class="about_text">
-                  Ofrece herramientas clave como:
-               </p>
-               <ul class="about_text" style="padding-left: 20px; list-style-type: disc;">
-                  <li>Botón de pánico</li>
-                  <li>Localización de puntos de ayuda</li>
-                  <li>Registro de contactos de emergencia</li>
-                  <li>Chatbot informativo</li>
-               </ul>
-               <p class="about_text">
-                  Su objetivo es actuar de forma <strong>rápida y confiable</strong>, brindando acompañamiento en los momentos más críticos.
-               </p>
-               <p class="about_text">
-                  Con <strong>ConTigo</strong>, <em>nunca estás sola</em>.
-               </p>
-                <p class="about_text" style="font-style: italic; color: #f3801f;">"Tu seguridad, en la palma de tu mano."</p>
-            </div>
-         </div>
-         <div class="col-md-6 ">
-            <div class="image_2"><img src="images/logo_inf.jpeg"></div>
-         </div>
-      </div>
-      </div>
-   </div>
-</div>
-<!-- about section end -->
-
+            <!-- about section start -->
+            <div class="about_section layout_padding">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="about_main">
+                           <h1 class="about_taital">ConTigo</h1>
+                           <p class="about_text">
+                              <strong>ConTigo</strong> es una aplicación móvil diseñada para brindar apoyo a mujeres en
+                              situaciones de riesgo como:
+                           </p>
+                           <ul class="about_text" style="padding-left: 20px; list-style-type: disc;">
+                              <li>Acoso</li>
+                              <li>Intento de robo</li>
+                              <li>Secuestro</li>
+                           </ul>
+                           <p class="about_text">
+                              Ofrece herramientas clave como:
+                           </p>
+                           <ul class="about_text" style="padding-left: 20px; list-style-type: disc;">
+                              <li>Botón de pánico</li>
+                              <li>Localización de puntos de ayuda</li>
+                              <li>Registro de contactos de emergencia</li>
+                              <li>Chatbot informativo</li>
+                           </ul>
+                           <p class="about_text">
+                              Su objetivo es actuar de forma <strong>rápida y confiable</strong>, brindando
+                              acompañamiento en los momentos más críticos.
+                           </p>
+                           <p class="about_text">
+                              Con <strong>ConTigo</strong>, nunca estás sola.
+                           </p>
+                           <p class="about_text" style="font-style: italic; color: #f3801f;"><em>"Tu seguridad, en la palma
+                              de tu mano."</em></p>
+                        </div>
+                     </div>
+                     <div class="col-md-6 ">
+                        <div class="image_2"><img src="images/logo_inf.jpeg"></div>
+                     </div>
+                  </div>
                </div>
             </div>
-           
          </div>
-         <a class="carousel-control-prev" href="#my_main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-left"></i>
-         </a>
-         <a class="carousel-control-next" href="#my_main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-         </a>
+         <!-- about section end -->
+
       </div>
    </div>
+
+   </div>
+   <a class="carousel-control-prev" href="#my_main_slider" role="button" data-slide="next">
+      <i class="fa fa-angle-left"></i>
+   </a>
+   <a class="carousel-control-next" href="#my_main_slider" role="button" data-slide="next">
+      <i class="fa fa-angle-right"></i>
+   </a>
+   </div>
+   </div>
    <!-- about section end -->
+    
    <!-- footer section start -->
    <div class="footer_section layout_padding">
       <div class="container">
          <div class="newsletter_section">
             <div class="newsletter_left">
-               <div class="footer_logo"><img src="images/log.jpeg" alt="footer logo" /></div>
+               <div class="footer_logo"><img src="images/log.png" alt="footer logo" /></div>
             </div>
             <div class="newsletter_right">
                <div class="subscribe_main">
-                  <input type="text" class="mail_text"
-                     placeholder="© 2025 Proyect Innovation. Todos los derechos reservados." name="text" />
+                  <p class="mail_text">© 2025 Proyect Innovation. Todos los derechos reservados.</p>
                </div>
             </div>
          </div>
 
 
-         <h1 class="follow_text">Follow Us</h1>
+         <h1 class="follow_text">Siguenos en</h1>
          <div class="social_icon">
             <ul>
                <li><a href="#"><img src="images/fb-icon.png" alt="fb icon" /></a></li>
@@ -142,6 +149,7 @@
       </div>
    </div>
    <!-- footer section end -->
+
    <!-- Javascript files-->
    <script src="js/jquery.min.js"></script>
    <script src="js/popper.min.js"></script>
@@ -160,23 +168,86 @@
             openEffect: "none",
             closeEffect: "none"
          });
-         });
+      });
 
    </script>
    <script>
-         $(document).ready(function () {
-            // Add minus icon for collapse element which is open by default
-            $(".collapse.show").each(function () {
-               $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
-            });
-
-            // Toggle plus minus icon on show hide of collapse element
-            $(".collapse").on('show.bs.collapse', function () {
-               $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
-            }).on('hide.bs.collapse', function () {
-               $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
-            });
+      $(document).ready(function () {
+         // Add minus icon for collapse element which is open by default
+         $(".collapse.show").each(function () {
+            $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
          });
+
+         // Toggle plus minus icon on show hide of collapse element
+         $(".collapse").on('show.bs.collapse', function () {
+            $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+         }).on('hide.bs.collapse', function () {
+            $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+         });
+      });
+   </script>
+
+   <!--Canvas-->
+   <script>
+      const canvas = document.getElementById('orangeCanvas');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let bubbles = [];
+
+      function resize() {
+         width = canvas.width = window.innerWidth;
+         height = canvas.height = window.innerHeight;
+      }
+
+      function createBubbles() {
+         bubbles = [];
+         for (let i = 0; i < 60; i++) {
+            bubbles.push({
+               x: Math.random() * width,
+               y: height + Math.random() * height,
+               r: Math.random() * 30 + 10, // tamaño variable
+               speed: Math.random() * 0.5 + 0.3, // un poquito más rápido
+               alpha: Math.random() * 0.3 + 0.4 // más visible
+            });
+         }
+      }
+
+      function draw() {
+         // 🎨 Fondo degradado naranja más vivo
+         let gradient = ctx.createLinearGradient(0, 0, 0, height);
+         gradient.addColorStop(0, '#FFDAB3'); // naranja pastel más vivo
+         gradient.addColorStop(0.5, '#FFB6B9'); // salmón suave
+         gradient.addColorStop(1, '#FFF0F0'); // blanco rosado
+         ctx.fillStyle = gradient;
+         ctx.fillRect(0, 0, width, height);
+
+         bubbles.forEach(bubble => {
+            bubble.y -= bubble.speed;
+            if (bubble.y + bubble.r < 0) {
+               bubble.x = Math.random() * width;
+               bubble.y = height + bubble.r;
+            }
+
+            // 🫧 Dibujar burbuja con glow sutil
+            ctx.beginPath();
+            ctx.arc(bubble.x, bubble.y, bubble.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 182, 193, ${bubble.alpha})`; // rosa claro
+            ctx.fill();
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = `rgba(255, 182, 193, ${bubble.alpha * 1.5})`;
+         });
+
+         requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', () => {
+         resize();
+         createBubbles();
+      });
+
+      resize();
+      createBubbles();
+      draw();
    </script>
 </body>
 
