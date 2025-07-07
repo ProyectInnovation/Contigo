@@ -1,0 +1,111 @@
+/*=== Acerca de ===*/
+body {
+    padding-top: 100px; /* Separación para que el menú no tape el contenido */
+}
+
+.about_section {
+    padding: 60px 30px;
+    margin: 60px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(243, 128, 31, 0.3);
+    max-width: 1200px;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about_col {
+    flex: 1 1 45%;
+    margin: 15px;
+}
+
+.about_image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(243, 128, 31, 0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: glow 2s infinite alternate;
+    cursor: pointer;
+}
+
+.about_image img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 15px rgba(243, 128, 31, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 35px rgba(243, 128, 31, 0.8);
+    }
+}
+
+.about_title {
+    font-size: 3rem;
+    color: #f3801f;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.about_text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.about_list {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.about_list li {
+    margin-bottom: 5px;
+}
+
+.about_slogan {
+    font-style: italic;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 25px;
+    animation: blink 1.5s infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        color: #ffffff;
+        text-shadow: 0 0 10px #ffffff;
+    }
+    100% {
+        color: #f3801f;
+        text-shadow: 0 0 20px #f3801f;
+    }
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .about_container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about_col {
+        flex: 1 1 100%;
+    }
+    .about_title {
+        font-size: 2.2rem;
+    }
+    .about_slogan {
+        font-size: 1.2rem;
+    }
+}

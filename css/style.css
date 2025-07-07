@@ -27,6 +27,11 @@
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
+.main-content {
+    flex: 1;
+    /* empuja al footer abajo */
+}
+
 * {
     box-sizing: border-box !important;
     transition: ease all 0.5s;
@@ -1391,169 +1396,647 @@ input.mail_text::placeholder {
     color: white;
 }
 
-
-/*mapa*/
-
-/* Estilos personalizados para títulos y listas */
-.section-title {
-    font-weight: 600;
-    color: #fff;
-    /* naranja tenue */
-    margin-bottom: 15px;
-    border-bottom: 2px solid #f0ad4e;
-    padding-bottom: 5px;
-    font-size: 1.25rem;
-}
-
-.list-group-item {
-    background-color: #fff8f1;
-    border: 1px solid #f5c27a;
-    color: #ffac63;
-    transition: background-color 0.3s ease;
-}
-
-.list-group-item:hover {
-    background-color: #f5c27a;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-
-  /* Contenedor del título sin fondo ni sombra */
-  .map-title-container {
+/* Contenedor del título sin fondo ni sombra */
+.map-title-container {
     padding: 20px 0;
     text-align: center;
     margin-bottom: 30px;
-  }
+}
 
-  .map-title-container h3 {
+.map-title-container h3 {
     margin: 0;
     font-weight: 700;
     font-size: 1.8rem;
     color: #333;
-  }
-  
+}
 
-  /* CHAT */
-  .chat-container {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: "Segoe UI", sans-serif;
+
+/* ================================= CHAT ========================================== */
+.chat-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", sans-serif;
 }
 
 .chat-container h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .chat-container .alerta {
-  background-color: #ffe0e0;
-  border-left: 4px solid #f44336;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  font-size: 14px;
-  color: #444;
+    background-color: #ffe0e0;
+    border-left: 4px solid #f44336;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #444;
 }
 
 #chat {
-  max-height: 350px;
-  overflow-y: auto;
-  padding: 10px;
-  background-color: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 15px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .user-message,
 .bot-message {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
-  animation: fadeIn 0.3s ease-in-out;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    animation: fadeIn 0.3s ease-in-out;
 }
 
 .user-message {
-  justify-content: flex-end;
-  text-align: right;
+    justify-content: flex-end;
+    text-align: right;
 }
 
 .bot-message {
-  justify-content: flex-start;
-  text-align: left;
+    justify-content: flex-start;
+    text-align: left;
 }
 
 .user-message div,
 .bot-message div {
-  background-color: #f3f3f3;
-  padding: 10px 14px;
-  border-radius: 12px;
-  max-width: 65%;
-  word-wrap: break-word;
-  font-size: 15px;
+    background-color: #f3f3f3;
+    padding: 10px 14px;
+    border-radius: 12px;
+    max-width: 65%;
+    word-wrap: break-word;
+    font-size: 15px;
 }
 
 .user-message div {
-  background-color: #fff3e0;
+    background-color: #fff3e0;
 }
 
 .bot-message div {
-  background-color: #e1f5fe;
+    background-color: #e1f5fe;
 }
 
 .chat-icon {
-  font-size: 1.4rem;
-  line-height: 1.2;
+    font-size: 1.4rem;
+    line-height: 1.2;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #typing {
-  font-style: italic;
-  color: #888;
-  margin: 8px 0;
-  display: none;
+    font-style: italic;
+    color: #888;
+    margin: 8px 0;
+    display: none;
 }
 
 textarea#input {
-  width: 100%;
-  height: 80px;
-  resize: none;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+    width: 100%;
+    height: 80px;
+    resize: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
 }
 
 button {
-  margin-top: 10px;
-  background-color: #4caf50;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+    margin-top: 10px;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: #45a049;
+    background-color: #45a049;
+}
+
+
+/* Footer con gradiente, texto centrado y sin borde extra */
+.bottom-bar {
+    width: 100%;
+    background: linear-gradient(135deg, #1c1c1c, #000000);
+    color: #f1f1f1;
+    text-align: center;
+    padding: 20px 15px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.bottom-bar .bottom-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+.bottom-bar .bottom-text a {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.bottom-bar .bottom-text a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 6px #ff9800;
+}
+
+
+
+/*____________________________________________________________________________*/
+/* Logo más grande y bien visible */
+.logo img {
+    width: 110px;
+    /* tamaño ancho fijo para que se vea bien */
+    height: auto;
+    /* que mantenga proporción */
+    display: block;
+}
+
+/* Fondo gris original para navbar */
+.header_section nav.navbar {
+    background-color: #f0f0f0 !important;
+    box-shadow: none;
+}
+
+/* Estilo para los links con iconos */
+.navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333 !important;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Contenedor nav para que ocupe todo el ancho y los elementos se alineen */
+.navbar-nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+/* Links normales alineados con icono a la izquierda */
+/* Animación para resaltar el link activo y al pasar el mouse */
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+    color: #333 !important;
+}
+
+/* Brillo suave animado cuando está activo o hover */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: #ad1457 !important;
+    /* sombra y brillo */
+    text-shadow:
+        0 0 5px #ad1457,
+        0 0 10px #ad1457,
+        0 0 20px #e91e63;
+    transition: all 0.4s ease;
+}
+
+/* Opcional: animación de brillo pulsante */
+@keyframes glow {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 5px #ad1457,
+            0 0 10px #ad1457,
+            0 0 20px #e91e63;
+    }
+
+    50% {
+        text-shadow:
+            0 0 10px #e91e63,
+            0 0 15px #f48fb1,
+            0 0 30px #f48fb1;
+    }
+}
+
+.navbar-nav .nav-link.active {
+    animation: glow 2s infinite alternate;
+}
+
+
+/* Botón Cerrar Sesión se mueve a la derecha */
+.navbar-nav .nav-link[href="contact.php"] {
+    margin-left: auto;
+    /* empuja este link a la derecha */
+    color: #d32f2f !important;
+    font-weight: 700;
+    padding-right: 1rem;
+}
+
+/* Hover para todos los links */
+.navbar-nav .nav-link:hover {
+    color: #555 !important;
+}
+
+/* Iconos se alinean con texto */
+.navbar-nav .nav-link i {
+    font-size: 1.2rem;
+    color: inherit;
+    line-height: 1;
+}
+
+/* Botón Cerrar sesión rojo */
+.navbar-nav .nav-link[href="contact.php"] {
+    color: #d32f2f !important;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link[href="contact.php"]:hover {
+    color: #9a0007 !important;
+}
+
+/* Icono en cerrar sesión también rojo */
+.navbar-nav .nav-link[href="contact.php"] i {
+    color: inherit;
+}
+
+/* Canvas como fondo absoluto en la sección contacto */
+.contact_section {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    /* 100% de la altura visible */
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#orangeCanvas {
+    position: fixed;
+    /* para que siempre cubra toda la ventana */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* para que quede detrás de todo */
+    pointer-events: none;
+    /* no interfiere con clics */
+    display: block;
+}
+
+.contact_section .container-fluid,
+.contact_section .row,
+.contact_section .mail_main,
+.contact_section .map_main {
+    position: relative;
+    z-index: 1;
+    /* Para que el contenido quede sobre el canvas */
+}
+
+/*Textos*/
+.contact_taital {
+    color: #d35400;
+    /* naranja cálido */
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-shadow:
+        1px 1px 3px rgba(0, 0, 0, 0.15),
+        0 0 8px rgba(255, 140, 0, 0.5);
+    text-align: left;
+    margin: 0 0 20px 15px;
+    /* margen inferior y margen izquierdo */
+    padding-top: 15px;
+    max-width: 85%;
+    /* controla el ancho para que no se acerque mucho al mapa */
+    padding-right: 20px;
+    /* espacio a la derecha */
+}
+
+.about_text {
+    color: #5a3e1b;
+    /* marrón cálido */
+    font-size: 1.15rem;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 2px rgba(255, 165, 79, 0.4);
+    text-align: justify;
+    margin: 0 0 30px 15px;
+    max-width: 85%;
+    /* mismo ancho que el título para alinearse bien */
+    padding-right: 20px;
+    /* espacio a la derecha */
+}
+
+.map-responsive {
+    border: 2px solid rgba(255, 165, 79, 0.8);
+    box-shadow: 0 0 10px rgba(255, 165, 79, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+
+    /* Animación */
+    animation: scaleUp 0.8s ease forwards;
+    transform-origin: center center;
+    opacity: 0;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*Un texto del footer*/
+@keyframes parpadeoTexto {
+
+    0%,
+    100% {
+        color: #ffa54f;
+        /* naranja suave */
+    }
+
+    50% {
+        color: #ffffff;
+        /* verde suave */
+    }
+}
+
+.mail_text {
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 22px;
+    user-select: none;
+    animation: parpadeoTexto 3s infinite;
+    transition: color 0.5s ease;
+}
+
+
+
+/* ====================================== Para geo =================================================*/
+
+.map-title {
+    color: #FF6F00 !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.section-title {
+    color: #FF6F00;
+    /* 🍊 Naranja más vibrante */
+    text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.2);
+    /* Sombra ligera para claridad */
+    font-size: 1.7rem;
+    /* Un poco más grande */
+    font-weight: 600;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #FF6F00;
+    /* Línea naranja */
+    padding-bottom: 4px;
+}
+
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Fondo claro translúcido */
+    border: 1px solid #FF6F00;
+    /* Borde naranja fuerte */
+    color: #333;
+    /* Texto oscuro para contraste */
+    font-size: 1.2rem;
+    /* Un poco más grande */
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.list-group-item:hover {
+    background-color: #FF6F00;
+    /* Fondo naranja en hover */
+    color: #fff;
+    /* Texto blanco */
+    transform: translateY(-1px);
+    /* Efecto flotante más sutil */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .map-title {
+        font-size: 2rem;
+        margin-top: 40px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+
+/*============================= acerca de ==============================================*/
+.about_taital {
+    color: #f3801f;
+    /* naranja */
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.about_text {
+    color: #000000;
+    /* blanco hueso para que contraste sobre fondo oscuro */
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about_text ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin-bottom: 15px;
+    color: #eee;
+}
+
+.about_text li {
+    margin-bottom: 5px;
+}
+
+.about_text em {
+    font-style: italic;
+}
+
+/* Parpadeo del texto "nunca estás sola" */
+.about_text em {
+    animation: blink-colors 1.5s infinite alternate;
+}
+
+@keyframes blink-colors {
+    0% {
+        color: #000000;
+        text-shadow: 0 0 8px #fff;
+    }
+
+    100% {
+        color: #f3801f;
+        text-shadow: 0 0 15px #f3801f;
+    }
+}
+
+/* Imagen con borde y sombra parpadeante */
+.image_2 img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    animation: glow-border 2s infinite alternate;
+    box-shadow: 0 0 15px rgba(243, 128, 31, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image_2 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(243, 128, 31, 0.8);
+}
+
+@keyframes glow-border {
+    0% {
+        box-shadow: 0 0 15px rgba(243, 128, 31, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 0 35px rgba(243, 128, 31, 0.8);
+    }
+}
+
+@media (min-width: 768px) {
+    .image_2 {
+        margin-top: 150px;
+        /* baja la imagen 40px */
+    }
+}
+
+/*========================================= Informción ========================================*/
+.shop_section {
+  padding: 60px 20px;
+}
+
+.shop_taital {
+  font-size: 2.5rem;
+  color: #f3801f; /* Naranja llamativo */
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Sombra para que no se pierda en el canvas */
+  text-align: center;
+}
+
+.shop_text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #000000; /* Texto claro para contraste */
+  text-align: justify;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra ligera */
+}
+
+.image_3 {
+  display: block;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image_3:hover {
+  transform: scale(1.05);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 15px rgba(243, 128, 31, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(243, 128, 31, 0.9);
+  }
+}
+
+/* Carrusel botones */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(243, 128, 31, 0.7);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+  color: #960000;
+  font-size: 1.8rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .shop_taital {
+    font-size: 2rem;
+  }
+  .shop_text {
+    font-size: 1rem;
+  }
+  .image_3 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .carousel-inner {
+    display: block; /* Muestra todos los slides uno debajo del otro */
+  }
+  .carousel-item {
+    margin-bottom: 40px;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none; /* Quitar flechas en móvil */
+  }
+}
+
+/* Permite que las imágenes y su sombra “se salgan” de la caja del carrusel */
+.carousel-inner,
+.carousel-item {
+  overflow: visible !important;
 }

@@ -1,0 +1,301 @@
+/* ============ GLOBAL ============ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+body {
+  background: linear-gradient(270deg, #fff1f0, #ffe6e1, #fff1f0);
+  background-size: 800% 800%;
+  animation: gradientBackground 20s ease infinite, fadeInPage 1.5s ease forwards;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  filter: blur(0.4px);
+  /* desenfoque súper leve para suavizar */
+}
+
+@keyframes gradientBackground {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============ ANIMACIONES TABS ============ */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* ============ FORMULARIOS ============ */
+/* Cambiar form-container para que no esté oculto por defecto */
+.form-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 480px;
+  margin: 20px auto;
+  padding: 30px;
+
+  /* Ya no poner: opacity:0 ni transform en la base */
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Solo cuando el tab está activo, aplicar la animación fadeZoomIn */
+.tab-pane.active.form-container {
+  animation: fadeZoomIn 0.8s ease forwards;
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes fadeZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.form-control,
+.btn-orange {
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-control {
+  border: 2px solid #ff7f50;
+  padding: 12px 18px;
+  font-size: 1rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.form-control:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.4);
+  transform: scale(1.03);
+  outline: none;
+}
+
+label {
+  color: #7a7a7a;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.form-control:focus+label {
+  color: #ff7f50;
+}
+
+.btn-orange {
+  background: #ff7f50;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 30px;
+  box-shadow: 0 5px 15px rgba(255, 127, 80, 0.4);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-orange:hover {
+  background: #ff6f00;
+  box-shadow: 0 8px 20px rgba(255, 111, 0, 0.7);
+  transform: scale(1.07);
+}
+
+.btn-orange:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px rgba(255, 111, 97, 0.4);
+}
+
+.tab-pane {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.tab-pane.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ============ BUBBLES ============ */
+#bubbleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* ============ Logotipo ============ */
+.welcome-full {
+  position: relative;
+  width: 100vw;
+  /* Ocupa todo el ancho real */
+  margin: 0;
+  padding: 60px 0;
+  /* Más espacio arriba y abajo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* CENTRA horizontal */
+  justify-content: center;
+  /* CENTRA vertical */
+  box-sizing: border-box;
+  z-index: 2;
+  /* Asegura que está arriba del canvas */
+}
+
+.custom-title {
+  font-weight: 700;
+  font-size: 3rem;
+  /* Más grande */
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.logo img {
+  display: block;
+  margin: 0 auto;
+  max-height: 200px;
+  /* altura deseada */
+  width: auto;
+  border-radius: 8px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  image-rendering: auto;
+  /* permite al navegador elegir la mejor calidad */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+img {
+  max-width: unset !important;
+  height: unset !important;
+}
+
+.logo img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-title {
+    font-size: 2.2rem;
+  }
+
+  .logo img {
+    max-height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-title {
+    font-size: 1.8rem;
+  }
+
+  .logo img {
+    max-height: 100px;
+  }
+}
+
+
+/*==== CAMBIOS EN FORMULARIOS ====*/
+#transitionScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.85), rgba(255, 87, 34, 0.85), rgba(156, 39, 176, 0.85));
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  /* más rápido aún */
+}
+
+/* cuando está activo */
+#transitionScreen.active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+
