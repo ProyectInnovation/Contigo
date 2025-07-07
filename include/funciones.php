@@ -1,19 +1,22 @@
 <?php
 require_once "database.php";
 
+header('Content-Type: application/json'); // Para que devuelva JSON
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST['accion']) && $_POST['accion'] === "registro") {
-        // Validar campos obligatorios
         $requiredUser = ['nombre', 'edad', 'fecha_nacimiento', 'curp', 'correo', 'password', 'tipo_sangre'];
         foreach ($requiredUser as $field) {
             if (empty($_POST[$field])) {
-                echo "<script>alert('Por fvor llenar el campo $field.'); history.back();</script>";
+                echo json_encode(['status' => 'error', 'message' => "Por favor llenar el campo $field."]);
+                exit;
             }
         }
         $requiredContact = ['em_nombre', 'em_telefono', 'em_parentesco'];
         foreach ($requiredContact as $field) {
             if (empty($_POST[$field])) {
-                die("Falta el campo $field de contacto");
+                echo json_encode(['status' => 'error', 'message' => "Falta el campo $field de contacto"]);
+                exit;
             }
         }
 
@@ -28,38 +31,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $tipo_sangre = $_POST['tipo_sangre'];
         $salud = isset($_POST['salud']) ? $_POST['salud'] : '';
 
-
-        // Validar que CURP sea mujer
         if (substr($curp, 10, 1) !== "M") {
-            echo "<script>alert('Solo se permite el registro de mujeres.'); history.back();</script>";
+            echo json_encode(['status' => 'error', 'message' => 'El CURP ingresado no corresponde con los requisitos de la plataforma.']);
             exit;
         }
 
-        // Insertar usuario
         $sqlUser = "INSERT INTO registro (nombre, edad, fecha_nacimiento, curp, correo, password, tipo_sangre, salud)
                     VALUES ('$nombre', $edad, '$fecha_nacimiento', '$curp', '$correo', '$password', '$tipo_sangre', '$salud')";
 
         if (!$conexion->query($sqlUser)) {
-            die("Error al registrar usuario: " . $conexion->error);
+            echo json_encode(['status' => 'error', 'message' => 'Error al registrar usuario: ' . $conexion->error]);
+            exit;
         }
 
-        // Insertar contacto emergencia
         $em_nombre = $_POST['em_nombre'];
         $em_telefono = $_POST['em_telefono'];
         $em_parentesco = $_POST['em_parentesco'];
-
 
         $sqlContact = "INSERT INTO contactos_emergencia (em_nombre, em_telefono, em_parentesco)
                        VALUES ('$em_nombre', '$em_telefono', '$em_parentesco')";
 
         if (!$conexion->query($sqlContact)) {
-            die("Error al registrar contacto de emergencia: " . $conexion->error);
+            echo json_encode(['status' => 'error', 'message' => 'Error al registrar contacto de emergencia: ' . $conexion->error]);
+            exit;
         }
 
-        echo "<script>alert('¡Registro exitoso!'); window.location.href='/contigo/contact.php';</script>";
-
-
         $conexion->close();
+        echo json_encode(['status' => 'success', 'message' => '¡Registro exitoso!', 'redirect' => '/contigo/contact.php']);
+        exit;
     }
 
 
@@ -67,18 +66,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $correo = $_POST['correo'];
         $password = $_POST['password'];
 
-        // ADMIN (correo y contraseña vacíos)
-        if ($correo === "" && $password === "") {
+        // ADMIN
+        if ($correo === "Contigo@gmail.com" && $password === "equipo") {
             session_start();
             $_SESSION["cliente"] = "Administrador";
             $_SESSION["admin"] = true;
-            echo "<script>alert('Inicio como administrador'); window.location.href='admin.php';</script>";
+            echo json_encode([
+                'status' => 'success',
+                'message' => '💼 Bienvenido Administrador 👑',
+                'redirect' => '/contigo/panel_organismos.php'
+            ]);
             exit;
         }
 
-        // Conexión
+        // USUARIO NORMAL
         $conexion = conectarBD();
-
         $sql = "SELECT * FROM registro WHERE correo = '$correo'";
         $resultado = mysqli_query($conexion, $sql);
 
@@ -88,15 +90,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (password_verify($password, $row['password'])) {
                 session_start();
                 $_SESSION["cliente"] = $row["nombre"];
-                echo "<script>alert('Inicio de sesión exitoso'); window.location.href='/contigo/index.html';</script>";
+                echo json_encode([
+                    'status' => 'success',
+                    'message' => '👋 Bienvenido, ' . $row["nombre"],
+                    'redirect' => '/contigo/index.html'
+                ]);
             } else {
-                echo "<script>alert('Contraseña incorrecta'); history.back();</script>";
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'Contraseña incorrecta'
+                ]);
             }
         } else {
-            echo "<script>alert('Correo no registrado'); history.back();</script>";
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Correo no registrado'
+            ]);
         }
 
         $conexion->close();
+        exit;
     }
 }
 ?>
