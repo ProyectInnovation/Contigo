@@ -4,7 +4,7 @@ const urlsToCache = [
   // HTML y páginas
   '/index.html',
   '/acerca.html',
-  '/bot.html',
+  '/chatbotAI.html',
   '/geolocalizacion.html',
   '/informacion.html',
   '/manifest.json',
@@ -22,7 +22,7 @@ const urlsToCache = [
   "img/screenshot_vertical.png",
 
   // PHP
-  '/backend.php',
+  '/chatbot.php',
   '/contact.php',
   '/include/database.php',
   '/include/funciones.php',
