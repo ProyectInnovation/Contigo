@@ -71,6 +71,7 @@ const urlsToCache = [
   '/css/owl.carousel.min.css',
   '/css/responsive.css',
   '/css/slick.css',
+  '/css/chatbot.css',
   '/css/style.css',
 
   // Imágenes
