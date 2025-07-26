@@ -242,13 +242,13 @@ button {
 }
 
 .navbar {
-    padding: 0px 20px 15px 20px;
+    padding: 3px 5px 3px 5px;
 }
 
 .navbar-light .navbar-nav .nav-link {
     display: block;
-    padding: .5rem 1rem;
-    font-size: 18px;
+    padding: .6px 12px;
+    font-size: 16px;
     color: #0d0a05;
     text-transform: uppercase;
 }
@@ -1571,7 +1571,7 @@ button:hover {
 /*____________________________________________________________________________*/
 /* Logo más grande y bien visible */
 .logo img {
-    width: 110px;
+    width: 90px;
     /* tamaño ancho fijo para que se vea bien */
     height: auto;
     /* que mantenga proporción */

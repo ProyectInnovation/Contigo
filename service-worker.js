@@ -4,26 +4,47 @@ const urlsToCache = [
   // HTML y páginas
   '/index.html',
   '/acerca.html',
-  '/chatbotAI.html',
-  '/geolocalizacion.html',
   '/informacion.html',
   '/manifest.json',
+  '/service-worker.js',
 
-  "img/icono2048.png",
-  "img/maskable_icon.png",
-  "img/maskable_icon_x128.png",
-  "img/maskable_icon_x192.png",
-  "img/maskable_icon_x384.png",
-  "img/maskable_icon_x48.png",
-  "img/maskable_icon_x512.png",
-  "img/maskable_icon_x72.png",
-  "img/maskable_icon_x96.png",
-  "img/screenshot_horizontal.png",
-  "img/screenshot_vertical.png",
+  // Imágenes (normalicé a /img/ para iconos y /images/ para fotos)
+  '/img/icono2048.png',
+  '/img/maskable_icon.png',
+  '/img/maskable_icon_x128.png',
+  '/img/maskable_icon_x192.png',
+  '/img/maskable_icon_x384.png',
+  '/img/maskable_icon_x48.png',
+  '/img/maskable_icon_x512.png',
+  '/img/maskable_icon_x72.png',
+  '/img/maskable_icon_x96.png',
+  '/img/screenshot_horizontal.png',
+  '/img/screenshot_vertical.png',
+
+  '/images/acoso.jpeg',
+  '/images/banner-bg.png',
+  '/images/book-bg.png',
+  '/images/call-icon.png',
+  '/images/choose-bg.png',
+  '/images/client-bg.png',
+  '/images/client-img.png',
+  '/images/cup-img-1.png',
+  '/images/cup-img-2.png',
+  '/images/cup-img-3.png',
+  '/images/cup-img-4.png',
+  '/images/cup-img-5.png',
+  '/images/fb-icon.png',
+  '/images/footer-bg.png',
+  '/images/footer-logo.png',
+  '/images/icon-1.png',
+  '/images/icon-192.png',
+  '/images/icon-3.png',
+  '/images/icon-4.png',
 
   // PHP
   '/chatbot.php',
   '/contact.php',
+  '/geolocalizacion.php',
   '/include/database.php',
   '/include/funciones.php',
   '/include/guardar_google.php',
@@ -31,16 +52,11 @@ const urlsToCache = [
   '/include/EliminarOrganismo.php',
   '/include/obtener_contacto.php',
 
-  // JS
-  '/script.js',
+  // JS (solo una versión de cada, con /js/ al inicio)
   '/js/bootstrap.bundle.js',
-  '/js/bootstrap.bundle.js.map',
   '/js/bootstrap.bundle.min.js',
-  '/js/bootstrap.bundle.min.js.map',
   '/js/bootstrap.js',
-  '/js/bootstrap.js.map',
   '/js/bootstrap.min.js',
-  '/js/bootstrap.min.js.map',
   '/js/custom.js',
   '/js/jquery-3.0.0.min.js',
   '/js/jquery.mCustomScrollbar.concat.min.js',
@@ -51,7 +67,7 @@ const urlsToCache = [
   '/js/popper.min.js',
   '/js/slider-setting.js',
 
-  // CSS
+  // CSS (una sola versión de cada)
   '/css/animate.min.css',
   '/css/bootstrap-grid.css',
   '/css/bootstrap-grid.min.css',
@@ -74,47 +90,26 @@ const urlsToCache = [
   '/css/chatbot.css',
   '/css/style.css',
 
-  // Imágenes
-  '/images/acoso.jpeg',
-  '/images/banner-bg.png',
-  '/images/book-bg.png',
-  '/images/call-icon.png',
-  '/images/choose-bg.png',
-  '/images/client-bg.png',
-  '/images/client-img.png',
-  '/images/cup-img-1.png',
-  '/images/cup-img-2.png',
-  '/images/cup-img-3.png',
-  '/images/cup-img-4.png',
-  '/images/cup-img-5.png',
-  '/images/fb-icon.png',
-  '/images/footer-bg.png',
-  '/images/footer-logo.png',
-  '/images/icon-1.png',
-  '/images/icon-192.png',
-  '/images/icon-3.png',
-  '/images/icon-4.png',
-
   // Sonidos
-  '/sounds/alarma.mp3'
+  '/sounds/alarma.mp3',
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
   );
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.map((key) => {
-        if (key !== CACHE_NAME) {
-          return caches.delete(key);
-        }
-      }))
+      Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
+        })
+      )
     )
   );
   self.clients.claim();
