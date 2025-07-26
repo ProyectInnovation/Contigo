@@ -95,8 +95,9 @@
                            <p class="about_text">
                               Con <strong>ConTigo</strong>, nunca estás sola.
                            </p>
-                           <p class="about_text" style="font-style: italic; color: #f3801f;"><em>"Tu seguridad, en la palma
-                              de tu mano."</em></p>
+                           <p class="about_text" style="font-style: italic; color: #f3801f;"><em>"Tu seguridad, en la
+                                 palma
+                                 de tu mano."</em></p>
                         </div>
                      </div>
                      <div class="col-md-6 ">
@@ -121,7 +122,7 @@
    </div>
    </div>
    <!-- about section end -->
-    
+
    <!-- footer section start -->
    <div class="footer_section layout_padding">
       <div class="container">
@@ -248,6 +249,18 @@
       resize();
       createBubbles();
       draw();
+   </script>
+
+   <script>
+      if ('serviceWorker' in navigator) {
+         navigator.serviceWorker.register('service-worker.js')
+            .then(function (registration) {
+               console.log('Service Worker registrado con éxito:', registration);
+            })
+            .catch(function (error) {
+               console.log('Fallo al registrar el Service Worker:', error);
+            });
+      }
    </script>
 </body>
 
