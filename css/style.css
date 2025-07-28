@@ -1335,6 +1335,36 @@ input.mail_text::placeholder {
     box-shadow: 0 8px 15px rgba(230, 92, 0, 0.6);
 }
 
+@media (max-width: 480px) {
+  .custom-tabs {
+    /* ✅ si quieres mantener horizontal, quita esta línea */
+    /* flex-direction: column; */
+
+    max-width: 100%;
+    flex-wrap: wrap; /* permite que bajen si no caben */
+    justify-content: center;
+  }
+
+  .custom-tabs .nav-item {
+    margin-bottom: 8px;
+  }
+
+  .custom-tabs .nav-link {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    margin: 0 3px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .custom-tabs .nav-link.active {
+    top: -3px;
+    box-shadow: 0 3px 6px rgba(230, 92, 0, 0.5);
+  }
+}
+
+
+
 
 /* Título de formularios */
 .form-title {
