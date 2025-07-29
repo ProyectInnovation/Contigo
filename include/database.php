@@ -1,10 +1,11 @@
 <?php
 
-function conectarBD() {
-    $usuario = "root";
-    $password = "";
-    $database = "contigo";
-    $host = "127.0.0.1";
+function conectarBD()
+{
+$host = "sql7.freesqldatabase.com";
+$usuario = "sql7792463";
+$password = "Proyecto_1001"; // reemplaza por tu contraseña real
+$database = "sql7792463";
 
     $con = mysqli_connect($host, $usuario, $password, $database);
 
@@ -13,4 +14,8 @@ function conectarBD() {
     }
     return $con;
 }
+
+// Prueba directa
+$conexion = conectarBD();
+echo "¡Conexión exitosa a db4free.net!";
 ?>
